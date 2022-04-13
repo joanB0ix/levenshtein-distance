@@ -1,0 +1,25 @@
+@import 'styles/_variables.scss';
+.container {
+    display: inline-block;
+    text-align: left;
+    width: 100px;
+    min-width: fit-content;
+    border: none;
+    border-bottom: $backgroundColor-2 1px solid;
+    background-color: $backgroundColor-2;
+    border-radius: $borderRadius-s;
+    padding: $spacing-s;
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    transition: width 200ms;
+    &:focus {
+        border-bottom: $mainAccent-1 1px solid;
+        width: 200px;
+        transition: width 200ms;
+    }
+    &:empty::before {
+        content: attr(data-placeholder);
+        opacity: 0.5;
+    }
+}
